@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff7ed" />
+  <meta name="description" content="Welcome to Tridyut's personal profile website." />
+  <title>Tridyut — My Little Universe</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+    :root {
+      --pink: #ff6b9a;
+      --orange: #ffad60;
+      --purple: #8b70f5;
+      --blue: #68c9ff;
+      --ink: #242039;
+      --cream: #fff9f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 0;
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+    .logo span { color: var(--pink); }
+
+    .nav-tag {
+      background: white;
+      border: 1px solid #f1e7dc;
+      border-radius: 30px;
+      padding: 10px 17px;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 35px;
+      padding: 55px 0 85px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: .8rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 20px #4433220b;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #6dcf8a;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
+      line-height: .99;
+      letter-spacing: -6px;
+      margin-bottom: 25px;
+    }
+
+    h1 .gradient {
+      background: linear-gradient(100deg, #ff6397, #ff9a54, #9574f5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 460px;
+      color: #746d7f;
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: .92rem;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-primary {
+      color: white;
+      background: var(--ink);
+      box-shadow: 0 8px 22px #24203920;
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid #eee4da;
+    }
+
+    .art {
+      position: relative;
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+    }
+
+    .blob {
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border-radius: 44% 56% 63% 37% / 43% 42% 58% 57%;
+      background: linear-gradient(140deg, #ffcb91, #ff8cb0 55%, #c3a2ff);
+      animation: morph 8s ease-in-out infinite;
+    }
+
+    .profile-card {
+      position: relative;
+      z-index: 1;
+      width: min(270px, 85%);
+      min-height: 275px;
+      background: #ffffffdf;
+      backdrop-filter: blur(12px);
+      border: 2px solid #ffffff;
+      border-radius: 30px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0 25px 65px #68436b20;
+      transform: rotate(-4deg);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .avatar {
+      display: grid;
+      place-items: center;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 18px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #ffd7a7, #ff8eb0 60%, #a794ff);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.6rem;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0 10px 25px #f77caa35;
+    }
+
+    .profile-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.65rem;
+    }
+
+    .profile-card p {
+      color: #847a91;
+      font-size: .9rem;
+      margin-top: 8px;
+    }
+
+    .spark {
+      position: absolute;
+      font-size: 2.2rem;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .s1 { top: 30px; right: 22px; color: #ffb05f; }
+    .s2 { left: 4px; bottom: 48px; animation-delay: -2s; }
+    .s3 { right: 10px; bottom: 35px; animation-delay: -1s; }
+    .s4 { top: 60px; left: 20px; font-size: 1.5rem; }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 42px;
+    }
+
+    .kicker {
+      color: #ee6798;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    h2.section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      letter-spacing: -2px;
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: #7d7586;
+      line-height: 1.8;
+    }
+
+    .about-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      background: white;
+      border: 1px solid #f1e7dc;
+      border-radius: 30px;
+      padding: clamp(25px, 5vw, 50px);
+      box-shadow: 0 20px 60px #4b302208;
+    }
+
+    .about-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.7rem;
+      margin-bottom: 17px;
+    }
+
+    .about-card p {
+      color: #7d7586;
+      line-height: 1.9;
+    }
+
+    .quote-card {
+      background: linear-gradient(135deg, #fff0e4, #ffe8f1);
+      border-radius: 22px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .quote-mark {
+      font-family: Georgia, serif;
+      color: #f477a1;
+      font-size: 4rem;
+      line-height: .8;
+      margin-bottom: 12px;
+    }
+
+    .quote-card p {
+      color: #48364b;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .quote-card small {
+      margin-top: 20px;
+      color: #a47b91;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .value-card {
+      padding: 30px 25px;
+      border-radius: 24px;
+      min-height: 205px;
+      transition: transform .25s;
+    }
+
+    .value-card:hover { transform: translateY(-6px); }
+
+    .value-card:nth-child(1) { background: #ffeadc; }
+    .value-card:nth-child(2) { background: #f1eaff; }
+    .value-card:nth-child(3) { background: #e0f5ff; }
+
+    .value-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .value-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .value-card p {
+      color: #746d7f;
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    .closing {
+      text-align: center;
+      border-radius: 30px;
+      padding: 55px 25px;
+      background: linear-gradient(120deg, #ffdfc5, #ffd9e8, #e8ddff);
+    }
+
+    .closing h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+    }
+
+    .closing p {
+      max-width: 480px;
+      margin: 0 auto;
+      color: #766c80;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: #968b9b;
+      font-size: .85rem;
+    }
+
+    footer strong { color: var(--pink); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-4deg); }
+      50% { transform: translateY(-12px) rotate(-1deg); }
+    }
+
+    @keyframes morph {
+      0%, 100% { border-radius: 44% 56% 63% 37% / 43% 42% 58% 57%; }
+      50% { border-radius: 58% 42% 40% 60% / 55% 58% 42% 45%; }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 45px;
+        text-align: center;
+        gap: 15px;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+        font-size: clamp(3.5rem, 14vw, 5.3rem);
+      }
+
+      .hero-copy { margin: auto; }
+      .actions { justify-content: center; }
+      .art { min-height: 360px; }
+      .blob { width: 270px; height: 270px; }
+      .about-card { grid-template-columns: 1fr; }
+      .values { grid-template-columns: 1fr; }
+      .value-card { min-height: auto; }
+      .section { padding: 60px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container">
+    <nav aria-label="Main navigation">
+      <a class="logo" href="#home">tridyut<span>.</span></a>
+      <a class="nav-tag" href="#about">A little about me ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container hero" id="home">
+      <div>
+        <div class="eyebrow">
+          <span class="dot"></span>
+          A LITTLE SPACE ON THE INTERNET
+        </div>
+
+        <h1>Hey there,<br>I'm <span class="gradient">Tridyut.</span></h1>
+
+        <p class="hero-copy">
+          Welcome to my little universe! This is my personal space
+          on the internet — a place to introduce myself, celebrate
+          individuality, and leave room for all the things still to come.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#about">Discover my world ↗</a>
+          <a class="btn btn-secondary" href="#values">What's this page? ✨</a>
+        </div>
+      </div>
+
+      <div class="art" aria-label="Colorful decorative profile illustration">
+        <div class="blob"></div>
+        <span class="spark s1" aria-hidden="true">✳</span>
+        <span class="spark s2" aria-hidden="true">✦</span>
+        <span class="spark s3" aria-hidden="true">✧</span>
+        <span class="spark s4" aria-hidden="true">✿</span>
+
+        <div class="profile-card">
+          <div class="avatar" aria-label="Tridyut initial">T</div>
+          <h2>It's Tridyut!</h2>
+          <p>One person. A whole universe. 🌈</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="about">
+      <div class="section-heading">
+        <div class="kicker">Get to know me</div>
+        <h2 class="section-title">Every person has a story.</h2>
+        <p>Here's the beginning of mine.</p>
+      </div>
+
+      <div class="about-card">
+        <div>
+          <h3>So, who am I? 👋</h3>
+          <p>
+            I'm Tridyut, and this is my personal corner of the web.
+            I'm here to express myself, keep exploring what makes me
+            unique, and create a space that feels like me.
+          </p>
+          <br>
+          <p>
+            There's plenty more to my story, and this page is just
+            the beginning. Thanks for stopping by!
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <p>
+            Your story doesn't have to look like anyone else's.
+            Just make it your own.
+          </p>
+          <small>— A little reminder for life</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="values">
+      <div class="section-heading">
+        <div class="kicker">The vibe</div>
+        <h2 class="section-title">A space to be yourself.</h2>
+        <p>
+          This page is a starting point for self-expression,
+          new ideas, and everything that makes a person unique.
+        </p>
+      </div>
+
+      <div class="values">
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">🌱</div>
+          <h3>Always Growing</h3>
+          <p>Every day is a chance to learn something new and keep moving forward.</p>
+        </article>
+
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">🎨</div>
+          <h3>Be Original</h3>
+          <p>There's no template for being you. Make your own kind of magic.</p>
+        </article>
+
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">🚀</div>
+          <h3>Keep Exploring</h3>
+          <p>Stay curious, welcome new possibilities, and see where life takes you.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="closing">
+        <h2>And this is just the start. ✨</h2>
+        <p>
+          Every great story starts somewhere. This is mine —
+          a little colorful, a little creative, and always a work in progress.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    Made with <strong>♥</strong> and a splash of color by Tridyut.
+    <br>© <span id="year">2026</span> Tridyut. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+  </html>
+  
